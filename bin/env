@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# Path to project directory
+PROJECT_ROOT="$(dirname "$(readlink -f "$0/..")")"
+
+# Path to project utilities
+BIN_ROOT="$PROJECT_ROOT/bin"
+
+# Path to project Lua files
+LUA_SRC_ROOT="$PROJECT_ROOT/lua"
+
+# Path to LuaRocks dependency data
+LUAROCKS_DATA_ROOT="$PROJECT_ROOT/lua_modules"
+LUAROCKS_SHARE_ROOT="$LUAROCKS_DATA_ROOT/share/lua/5.1"
+LUAROCKS_LIB_ROOT="$LUAROCKS_DATA_ROOT/lib/lua/5.1"
+
+# Override for `package.path` and `package.cpath` to point to project
+export LUA_PATH=`tr -d '[\n\t]' << EOF
+	$LUA_SRC_ROOT/?.lua;
+	$LUA_SRC_ROOT/?/init.lua;
+	$LUAROCKS_SHARE_ROOT/?.lua;
+	$LUAROCKS_SHARE_ROOT/?/init.lua;
+	$LUA_PATH
+EOF`
+
+export LUA_CPATH=`tr -d ['\n\t'] << EOF
+	$LUAROCKS_LIB_ROOT/?.so;\
+	$LUA_CPATH
+EOF`
+
+# Execute rest of user input as a command
+"$@"
