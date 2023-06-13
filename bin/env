@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # Path to project directory
-PROJECT_ROOT="$(dirname "$(readlink -f "$0/..")")"
+SCRIPT_ROOT="$(dirname "$(realpath "$0")")"
+PROJECT_ROOT=$(dirname $SCRIPT_ROOT)
 
 # Path to project utilities
 BIN_ROOT="$PROJECT_ROOT/bin"

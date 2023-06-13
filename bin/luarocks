@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
 # Path to project directory
-PROJECT_ROOT="$(dirname "$(readlink -f "$0/..")")"
+SCRIPT_ROOT="$(dirname "$(realpath "$0")")"
+PROJECT_ROOT=$(dirname $SCRIPT_ROOT)
 
 # Execute Lua with the wrapper's environment variables
-$PROJECT_ROOT/bin/env\
+$SCRIPT_ROOT/env\
   /usr/bin/env luarocks "$@"\
 	--tree "$PROJECT_ROOT/lua_modules"

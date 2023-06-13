@@ -45,8 +45,8 @@ separate command. For example: `bin/env lua51 -e "print(package.path)"` will
 print the project's `LUA_PATH` value:
 
 ```bash
-$ bin/env lua5.1 -e "print(package.cpath)"
-> ./lua_modules/lib/lua/5.1/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/lib/x86_64-linux-gnu/lua/5.1/?.so;/usr/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;/home/user/.luarocks/lib/lua/5.1/?.so
+$ bin/env lua5.1 -e "print(package.path)"
+> ./lua/?.lua;./lua/?/init.lua;./lua_modules/share/lua/5.1/?.lua;./lua_modules/share/lua/5.1/?/init.lua;./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;/home/theis/.luarocks/share/lua/5.1/?.lua;/home/theis/.luarocks/share/lua/5.1/?/init.lua
 ```
 
 You could also run `busted` in the environment using `bin/env busted`.
