@@ -15,7 +15,7 @@ Lua looks for modules in according to the environment variables `LUA_PATH` and
 `LUA_CPATH`. All I'm doing is setting that with a couple shell scripts. I'm sure
 adapting this for Windows is simple, but as I never use PowerShell or batch
 files for anything, this project is restricted to Linux. In my case, I'm using
-Windows Subshell for Linux.
+Windows Subsystem for Linux.
 
 # `LUA_PATH` and `LUA_CPATH` values
 
