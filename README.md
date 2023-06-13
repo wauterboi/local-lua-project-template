@@ -42,17 +42,12 @@ the project-supplied modules before system modules.
 This script automatically prepends project directories to the environment
 variables `LUA_PATH` and `LUA_CPATH` before executing all arguments after as a
 separate command. For example: `bin/env lua51 -e "print(package.path)"` will
-print the project's `LUA_PATH` value:
+print the project's `LUA_PATH` value.
 
-```bash
-$ bin/env lua5.1 -e "print(package.path)"
-> ./lua/?.lua;./lua/?/init.lua;./lua_modules/share/lua/5.1/?.lua;./lua_modules/share/lua/5.1/?/init.lua;./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;/home/theis/.luarocks/share/lua/5.1/?.lua;/home/theis/.luarocks/share/lua/5.1/?/init.lua
-```
-
-You could also run `busted` in the environment using `bin/env busted`.
-
-Obviously, if you have installed binaries through Luarocks in the project, you
-will need to reference its location in the `lua_modules` folder.
+You could also run `busted` and other binaries that rely on `LUA_PATH` and
+`LUA_CPATH` within the environment using `bin/env busted`. Obviously, if you
+have installed binaries through Luarocks in the project, you will need to
+reference its location in the `lua_modules` folder.
 
 ## `bin/luarocks`
 This script calls `bin/env` automatically and calls
