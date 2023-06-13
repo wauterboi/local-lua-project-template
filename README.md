@@ -16,6 +16,22 @@ is simple, but as I never use PowerShell or batch files for anything, this
 project is restricted to Linux. In my case, I'm using Windows Subshell for
 Linux.
 
+# `LUA_PATH` and `LUA_CPATH` values
+
+This is where the supplied wrappers will instruct Lua to search for modules.
+
+* `LUA_PATH`
+	* `<project_path>/lua/?.lua`
+	* `<project_path>/lua/?/init.lua`
+	* `<project_path>/lua_modules/share/lua/5.1/?.lua`
+	* `<project_path>/lua_modules/share/lua/5.1/?/init.lua`
+	* `$LUA_PATH`
+* `LUA_CPATH`
+	* `<project_path>/lua_modules/lib/lua/5.1/?.so;`
+	* `$LUA_CPATH`
+
+For more information on these environment variables, check out the Lua manual - specifically the sections explaining [`require`](https://www.lua.org/manual/5.1/manual.html#pdf-require), [`package.path`](https://www.lua.org/manual/5.1/manual.html#pdf-package.path), and [`package.cpath`](https://www.lua.org/manual/5.1/manual.html#pdf-package.cpath).
+
 # The `bin` folder
 
 The meat and potatoes of this project are the wrapper scripts `bin/env` and
