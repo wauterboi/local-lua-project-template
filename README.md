@@ -55,9 +55,10 @@ Obviously, if you have installed binaries through Luarocks in the project, you
 will need to reference its location in the `lua_modules` folder.
 
 ## `bin/luarocks`
-This script calls `bin/env` automatically and calls `/usr/bin/env luarocks
---tree "<project_path>/lua_modules>". For example, if you wanted to download all
-dependencies, use `bin/luarocks build --only-deps`.
+This script calls `bin/env` automatically and calls
+`/usr/bin/env luarocks --tree "<project_path>/lua_modules>"`.
+For example, if you wanted to download all dependencies, use
+`bin/luarocks build --only-deps`.
 
 # The Rockspec
 
