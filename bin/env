@@ -30,4 +30,4 @@ export LUA_CPATH=`tr -d ['\n\t'] << EOF
 EOF`
 
 # Execute rest of user input as a command
-"$@"
+$@

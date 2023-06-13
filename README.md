@@ -1,7 +1,8 @@
 # Local LuaRocks-based template
 
 Lots of people want LuaRocks to function like `npm`. While LuaRocks provides
-some playful ideas for supporting this, I'm taking a stab with wrapper scripts.
+[some playful ideas for supporting per-project workflows](https://github.com/luarocks/luarocks/wiki/Project:-LuaRocks-per-project-workflow),
+I'm taking a stab with wrapper scripts.
 
 # Requirements
 
@@ -10,11 +11,11 @@ some playful ideas for supporting this, I'm taking a stab with wrapper scripts.
 
 # Explanation
 
-Lua looks for modules in according to `LUA_PATH` and `LUA_CPATH`. All I'm doing
-is setting that with a couple shell scripts. I'm sure adapting this for Windows
-is simple, but as I never use PowerShell or batch files for anything, this
-project is restricted to Linux. In my case, I'm using Windows Subshell for
-Linux.
+Lua looks for modules in according to the environment variables `LUA_PATH` and
+`LUA_CPATH`. All I'm doing is setting that with a couple shell scripts. I'm sure
+adapting this for Windows is simple, but as I never use PowerShell or batch
+files for anything, this project is restricted to Linux. In my case, I'm using
+Windows Subshell for Linux.
 
 # `LUA_PATH` and `LUA_CPATH` values
 
@@ -46,7 +47,7 @@ print the project's `LUA_PATH` value.
 
 You could also run `busted` and other binaries that rely on `LUA_PATH` and
 `LUA_CPATH` within the environment using `bin/env busted`. Obviously, if you
-have installed binaries through Luarocks in the project, you will need to
+have installed binaries through LuaRocks in the project, you will need to
 reference its location in the `lua_modules` folder.
 
 ## `bin/luarocks`

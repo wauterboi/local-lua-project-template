@@ -6,5 +6,5 @@ PROJECT_ROOT=$(dirname $SCRIPT_ROOT)
 
 # Execute Lua with the wrapper's environment variables
 $SCRIPT_ROOT/env\
-  /usr/bin/env luarocks "$@"\
+  /usr/bin/env luarocks $@\
 	--tree "$PROJECT_ROOT/lua_modules"
